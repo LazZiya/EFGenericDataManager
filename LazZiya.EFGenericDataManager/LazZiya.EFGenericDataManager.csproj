@@ -1,28 +1,44 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>Generic data manager for EF and MSSQL CRUD operations</Description>
-    <PackageIcon>icon.png</PackageIcon>
-    <PackageTags>ef, entityframework,generic,data,manager,mssql,query,linq</PackageTags>
-    <PackageReleaseNotes>Generic data manager</PackageReleaseNotes>
-    <Copyright>Ziyad.info</Copyright>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>icon.png</PackageIcon>
+		<ApplicationIcon>files\icon.ico</ApplicationIcon>
+		<PackageReleaseNotes>Generic data manager</PackageReleaseNotes>
+		<Copyright>Ziyad.info</Copyright>
+		<Authors>Ziya Mollamahmut</Authors>
+		<Company>Ziyad.info</Company>
+		<PackageProjectUrl>https://github.com/LazZiya/EFGenericDataManager/wiki</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/LazZiya/EFGenericDataManager/wiki</RepositoryUrl>
+		<Description>Generic data manager for EF and MSSQL CRUD operations</Description>
+		<PackageTags>ef, entityframework,generic,data,manager,mssql,query,linq</PackageTags>
+		<Version>1.0.0-beta1</Version>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>LazZiya.EFGenericDataManager.xml</DocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile>LazZiya.EFGenericDataManager.xml</DocumentationFile>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.0" Exclude="Build,Analyzers" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="files\icon.png">
-	    <Pack>True</Pack>
-	    <PackagePath></PackagePath>
-	  </None>
+		<None Include="files\icon.ico">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="files\icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="files\license.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>		
 	</ItemGroup>
 </Project>
