@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LazZiya.EFGenericDataManager</name>
+    </assembly>
+    <members>
+        <member name="T:LazZiya.EFGenericDataManager.EFGenericDataManager`1">
+            <summary>
+            Generic CRUD manager
+            </summary>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.#ctor(`0)">
+            <summary>
+            Initialize a new instance of EFGenericDataManager
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.GetAsync``2(``1)">
+            <summary>
+            Get entity from db. 
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <typeparam name="TKey">Entity key type</typeparam>
+            <param name="id">Entity id</param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.GetAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Get entity from db
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <param name="searchExpression">search expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.GetAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Object}}})">
+            <summary>
+            Get entity from db with relevant childs
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <param name="searchExpression">search expression</param>
+            <param name="includes">List of expressions for items to be included</param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.AddAsync``1(``0)">
+            <summary>
+            Add a new entity to the db
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.UpdateAsync``2(``0)">
+            <summary>
+            Update entity, it must be fetched with FindAsync method.
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.DeleteAsync``1(``0)">
+            <summary>
+            Delete entity
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.Count``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Get entiity of type T by given expression
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.SetAsDefault``2(``1)">
+            <summary>
+            Set an entity IsDefault value to true, and all rest entitities to false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">type of entity ID</typeparam>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.ListAsync``1(System.Int32,System.Int32,System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}},System.Collections.Generic.List{LazZiya.EFGenericDataManager.Models.OrderByExpression{``0}})">
+            <summary>
+            Returns a list of an ordered entities
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="start"></param>
+            <param name="count"></param>
+            <param name="searchExpressions"></param>
+            <param name="orderBy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.EFGenericDataManager`1.ListAsync``2(System.Int32,System.Int32,System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}},System.Collections.Generic.List{LazZiya.EFGenericDataManager.Models.OrderByExpression{``0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Object}}},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Select a list of entities from type T and return as list of type U including related child entities
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U">return type</typeparam>
+            <param name="start"></param>
+            <param name="count"></param>
+            <param name="searchExpressions"></param>
+            <param name="orderBy"></param>
+            <param name="includes">expression list for included items</param>
+            <param name="select">expression to select properties and map to a new object</param>
+            <returns></returns>
+        </member>
+        <member name="T:LazZiya.EFGenericDataManager.GenericQueryExtensions">
+            <summary>
+            Extensin methods for GenericDbManager
+            </summary>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.GenericQueryExtensions.WhereList``1(System.Linq.IQueryable{``0},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}})">
+            <summary>
+            Converts a list of search expressions to IQueryable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="predications"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.GenericQueryExtensions.IncludeList``1(System.Linq.IQueryable{``0},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Object}}})">
+            <summary>
+            Converts a list of include expressions to IQueryable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="includes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.GenericQueryExtensions.OrderByList``1(System.Linq.IQueryable{``0},System.Collections.Generic.List{LazZiya.EFGenericDataManager.Models.OrderByExpression{``0}})">
+            <summary>
+            Converts a list of sort expressions to IQueryable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="orders"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LazZiya.EFGenericDataManager.IEFGenericDataManager">
+            <summary>
+            Generic CRUD manager interface
+            </summary>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.GetAsync``2(``1)">
+            <summary>
+            Get entity of type T by ID
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">type of entity ID</typeparam>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.AddAsync``1(``0)">
+            <summary>
+            Add entity of type T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.GetAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Object}}})">
+            <summary>
+            Get entity from db with relevant childs
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <param name="searchExpression">search expression</param>
+            <param name="includes">List of expressions for items to be included</param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.DeleteAsync``1(``0)">
+            <summary>
+            Delete entity
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.GetAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Get entiity of type T by given expression
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="searchExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.Count``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Get count of entities by given expression
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.SetAsDefault``2(``1)">
+            <summary>
+            Set entity of type T and given ID as default
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">type of entity ID</typeparam>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.ListAsync``1(System.Int32,System.Int32,System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}},System.Collections.Generic.List{LazZiya.EFGenericDataManager.Models.OrderByExpression{``0}})">
+            <summary>
+            Get list of ordered entities by given search expression and ordering expressions
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="start"></param>
+            <param name="count"></param>
+            <param name="searchExpressions"></param>
+            <param name="orderBy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.UpdateAsync``2(``0)">
+            <summary>
+            Update entity of type T, 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LazZiya.EFGenericDataManager.IEFGenericDataManager.ListAsync``2(System.Int32,System.Int32,System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}},System.Collections.Generic.List{LazZiya.EFGenericDataManager.Models.OrderByExpression{``0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Object}}},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Select a list of entities from type T and return as list of type U including related child entities
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U">return type</typeparam>
+            <param name="start"></param>
+            <param name="count"></param>
+            <param name="searchExpressions"></param>
+            <param name="orderBy"></param>
+            <param name="includes">expression list for included items</param>
+            <param name="select">expression to select properties and map to a new object</param>
+            <returns></returns>
+        </member>
+        <member name="T:LazZiya.EFGenericDataManager.Models.IActive">
+            <summary>
+            Interface to implement an entity with boolean value to be marked as active/disabled
+            </summary>
+        </member>
+        <member name="P:LazZiya.EFGenericDataManager.Models.IActive.IsActive">
+            <summary>
+            Get or set a value if the entity is active/disabled
+            </summary>
+        </member>
+        <member name="T:LazZiya.EFGenericDataManager.Models.IDefault">
+            <summary>
+            Interface to implement an entity with boolean value to be marked as Default
+            </summary>
+        </member>
+        <member name="P:LazZiya.EFGenericDataManager.Models.IDefault.IsDefault">
+            <summary>
+            Get or set a value if this is the default request culture
+            </summary>
+        </member>
+        <member name="T:LazZiya.EFGenericDataManager.Models.IHasId`1">
+            <summary>
+            Declare an interafce tha an entity should have an ID
+            </summary>
+            <typeparam name="TKey">key type</typeparam>
+        </member>
+        <member name="P:LazZiya.EFGenericDataManager.Models.IHasId`1.ID">
+            <summary>
+            Entity ID
+            </summary>
+        </member>
+        <member name="T:LazZiya.EFGenericDataManager.Models.OrderByDir">
+            <summary>
+            Define orderby direction
+            </summary>
+        </member>
+        <member name="F:LazZiya.EFGenericDataManager.Models.OrderByDir.ASC">
+            <summary>
+            Asceding sort
+            </summary>
+        </member>
+        <member name="F:LazZiya.EFGenericDataManager.Models.OrderByDir.DESC">
+            <summary>
+            Desceding sort
+            </summary>
+        </member>
+        <member name="T:LazZiya.EFGenericDataManager.Models.OrderByExpression`1">
+            <summary>
+            Define an orderby expression
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:LazZiya.EFGenericDataManager.Models.OrderByExpression`1.Expression">
+            <summary>
+            Order by expression
+            </summary>
+        </member>
+        <member name="P:LazZiya.EFGenericDataManager.Models.OrderByExpression`1.OrderByDir">
+            <summary>
+            Order by dir
+            </summary>
+        </member>
+    </members>
+</doc>
