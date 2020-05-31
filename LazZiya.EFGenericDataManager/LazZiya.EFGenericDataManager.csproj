@@ -10,9 +10,10 @@
 		<Copyright>Ziyad.info</Copyright>
 		<Authors>Ziya Mollamahmut</Authors>
 		<Company>Ziyad.info</Company>
-		<PackageProjectUrl>https://github.com/LazZiya/EFGenericDataManager/wiki</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/LazZiya/EFGenericDataManager/wiki</RepositoryUrl>
-		<Description>Generic data manager for EF and MSSQL CRUD operations</Description>
+		<PackageProjectUrl>https://github.com/LazZiya/EFGenericDataManager/</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/LazZiya/EFGenericDataManager/</RepositoryUrl>
+		<PackageIconUrl>https://raw.githubusercontent.com/LazZiya/EFGenericDataManager/master/LazZiya.EFGenericDataManager/files/icon.png</PackageIconUrl>
+		<Description>Generic data manager for EF CRUD operations</Description>
 		<PackageTags>ef, entityframework,generic,data,manager,mssql,query,linq</PackageTags>
 		<Version>1.0.0-beta1</Version>
 		<AssemblyVersion>1.0.0</AssemblyVersion>

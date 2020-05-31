@@ -30,7 +30,6 @@ namespace LazZiya.EFGenericDataManager
         /// <returns></returns>
         Task<bool> AddAsync<T>(T entity) where T : class;
 
-
         /// <summary>
         /// Get entity from db with relevant childs
         /// </summary>
