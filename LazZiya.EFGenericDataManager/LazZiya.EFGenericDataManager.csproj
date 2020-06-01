@@ -20,7 +20,7 @@
 		<FileVersion>1.0.0</FileVersion>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	<PropertyGroup>
 		<DocumentationFile>LazZiya.EFGenericDataManager.xml</DocumentationFile>
 	</PropertyGroup>
 
